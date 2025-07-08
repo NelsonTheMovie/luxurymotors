@@ -358,6 +358,16 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 `;
             vehicleGrid.appendChild(vehicleCard);
+            // Agregar comportamiento a los botones dentro de cada tarjeta
+vehicleCard.querySelectorAll("button").forEach(button => {
+    button.addEventListener("click", () => {
+        const contacto = document.getElementById("contacto");
+        if (contacto) {
+            contacto.scrollIntoView({ behavior: "smooth" });
+        }
+    });
+});
+
         });
     }
 
@@ -371,3 +381,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+// Funcionalidad para enviar el formulario de contacto usando Formspree
+const form = document.querySelector(".contact-form");
+if (form) {
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const data = new FormData(form);
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        if (response.ok) {
+            alert("Mensaje enviado con éxito. Gracias.");
+            form.reset();
+        } else {
+            alert("Error al enviar el mensaje. Intenta nuevamente.");
+        }
+    });
+}
