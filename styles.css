@@ -123,6 +123,71 @@ nav ul li a:hover, nav ul li a.active {
     background-color: #2980b9;
 }
 
+/* Ajustes para el botón de registro en el header */
+.register-btn {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+    background-color: #fff;
+}
+/* Pantalla de registro */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 40px 0 20px;
+  color: var(--primary-color);
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 0 auto 60px;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--primary-dark);
+}
+
+/* En pantallas muy pequeñas, ocultar el botón y usar el menú móvil */
+@media (max-width: 768px) {
+  .register-btn {
+    display: none;
+  }
+}
 /* Sección Catálogo */
 .catalog {
     padding: 80px 0;
